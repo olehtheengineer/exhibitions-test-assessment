@@ -1,0 +1,5 @@
+#!/bin/sh
+yarn lint-staged
+yarn lint:js
+yarn lint:css
+yarn lint:types

@@ -1,0 +1,58 @@
+{
+  "name": "exhibitions",
+  "version": "0.1.0",
+  "main": "index.js",
+  "private": true,
+  "workspaces": {
+    "packages": [
+      "packages/*"
+    ]
+  },
+  "scripts": {
+    "prepare": "husky install",
+    "build": "run-p -l app:build",
+    "app:start": "cd packages/app && yarn start",
+    "app:start:dev": "cd packages/app && yarn start:dev",
+    "app:build": "cd packages/app && yarn build",
+    "lint": "run-p lint:js lint:css lint:types lint:last-commit",
+    "lint:js": "eslint --ext .ts --ext .tsx packages",
+    "lint:css": "stylelint \"./packages/**/*.tsx\"",
+    "lint:types": "run-p lint:types:app",
+    "lint:types:app": "tsc --incremental -p packages/app",
+    "lint:last-commit": "commitlint -f HEAD~1",
+    "prettier": "prettier --write 'packages/**/*.{ts,tsx}'"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^16.2.3",
+    "@commitlint/config-conventional": "^16.2.1",
+    "@next/eslint-plugin-next": "^12.1.5",
+    "@typescript-eslint/eslint-plugin": "^5.19.0",
+    "@typescript-eslint/parser": "^5.19.0",
+    "cz-conventional-changelog": "^3.3.0",
+    "eslint": "^8.13.0",
+    "eslint-config-next": "^12.1.5",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-react": "^7.29.4",
+    "eslint-plugin-simple-import-sort": "^7.0.0",
+    "husky": "^7.0.4",
+    "lint-staged": "^12.3.8",
+    "npm-run-all": "^4.1.5",
+    "postcss-jsx": "^0.36.4",
+    "postcss-syntax": "^0.36.2",
+    "prettier": "^2.6.2",
+    "stylelint": "^14.7.1",
+    "stylelint-config-recommended": "^7.0.0",
+    "stylelint-config-styled-components": "^0.1.1",
+    "stylelint-processor-styled-components": "^1.10.0",
+    "typescript": "^4.6.3"
+  },
+  "resolutions": {
+    "slug": "^5.0.1"
+  },
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
+  }
+}

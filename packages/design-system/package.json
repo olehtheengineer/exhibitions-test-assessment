@@ -1,0 +1,19 @@
+{
+  "name": "@exhibition/design-system",
+  "version": "0.1.0",
+  "main": "index.ts",
+  "private": true,
+  "files": [
+    "./src"
+  ],
+  "dependencies": {
+    "react": "^17.0.2",
+    "styled-breakpoints": "^11.0.5",
+    "styled-components": "^5.3.5",
+    "styled-reset": "^4.3.4"
+  },
+  "devDependencies": {
+    "@types/react": "^17.0.39",
+    "@types/styled-components": "^5.1.25"
+  }
+}
